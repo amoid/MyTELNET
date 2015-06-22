@@ -1,11 +1,20 @@
 #pragma once
+#include "stdafx.h"
 using namespace std;
 
 class Server
 {
-	//SOCKET serverSocket;
+private:
+	BOOL supress;
+	BOOL echo;
+	SOCKET serverSocket;
+	char sendBuffer[MAX_BUFFER_SIZE];
+	char sendIndex = 0;
 public:
-	Server();
+	Server(SOCKET socket);
 	~Server();
+	int sendMessage(char *message, int length);
+	int recvMessage(char *message, int length);
+	int handle();
 };
 

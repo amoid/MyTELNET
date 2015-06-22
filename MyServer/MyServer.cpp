@@ -2,10 +2,12 @@
 //
 
 #include "stdafx.h"
-
+#include "server.h"
 using namespace std;
 
 #define CONNECT_MAX_NUMBER 5
+
+DWORD WINAPI socketThread(SOCKET socket);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -52,40 +54,22 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	SOCKADDR_IN clientAddr;
 	length = sizeof(clientAddr);
-	SOCKET serverSocketC = accept(serverSocket, (struct sockaddr *)&clientAddr, &length);
-	if (serverSocketC == INVALID_SOCKET) {
-		closesocket(serverSocket);
-		WSACleanup();
-		cout << "Accept() failed! code: " << WSAGetLastError() << endl;
-		return 0;
-	}
 
-	cout << "Client Accepted: " << inet_ntoa(clientAddr.sin_addr) << " " << ntohs(clientAddr.sin_port) << endl;
-
-	char x[100];
-	int dataLength = 100;
-	char *ptr = x;
-	while (dataLength > 0) {
-		ret = recv(serverSocketC, ptr, 100, 0);
-		if (ret == SOCKET_ERROR) {
-			cout << "Recv() failed!" << endl;
-			break;
+	while (1) {
+		SOCKET serverSocketC = accept(serverSocket, (struct sockaddr *)&clientAddr, &length);
+		if (serverSocketC == INVALID_SOCKET) {
+			closesocket(serverSocket);
+			WSACleanup();
+			cout << "Accept() failed! code: " << WSAGetLastError() << endl;
+			return 0;
 		}
 
-		if (ret == 0) {
-			cout << "Connection Closed!" << endl;
-			break;
-		}
+		HANDLE hThread1 = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)socketThread, (LPVOID)serverSocketC, 0, 0);
 
-		dataLength -= ret;
-		ptr += ret;
-	}
-	if (dataLength == 0) {
-		cout << "All data received!" << endl;
-		cout << x << endl;
-	}
+		cout << "Client Accepted: " << inet_ntoa(clientAddr.sin_addr) << " " << ntohs(clientAddr.sin_port) << endl;
 
-	closesocket(serverSocketC);
+	}
+	
 	closesocket(serverSocket);
 	WSACleanup();
 
@@ -93,3 +77,29 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
+DWORD WINAPI socketThread(SOCKET socket)
+{
+	cout << "Thread Created." << endl;
+	Server server = Server(socket);
+	int ret = server.handle();
+	if (ret < 0) {
+		cout << "Client Closed!" << endl;
+	}
+	/*
+	Server server = Server(socket);
+	char x[100] = "Welcome!";
+	int length = 101;
+	int res;
+	
+	server.sendMessage(x, length);
+
+	while (1) {
+		char x[100];
+		int length = 101;
+		server.recvMessage(x, length);
+		server.sendMessage(x, length);
+	}
+	*/
+//	GetCurrentThreadId();
+	return ret;
+}
