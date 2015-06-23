@@ -1,4 +1,4 @@
-﻿生成启动时间为 15/6/22 下午4:04:38。
+﻿生成启动时间为 15/6/23 下午3:30:31。
      1>项目“\\psf\Home\GIT\MyTELNET\MyClient\MyClient.vcxproj”在节点 2 上(Rebuild 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Client.cpp MyClient.cpp stdafx.cpp
