@@ -7,7 +7,7 @@ using namespace std;
 
 #define CONNECT_MAX_NUMBER 5
 
-DWORD WINAPI socketThread(SOCKET socket);
+DWORD WINAPI socketThread(LPP *lp);
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -28,9 +28,13 @@ int _tmain(int argc, _TCHAR* argv[])
 		return 0;
 	}
 
+	cout << "Please input the listening port: ";
+	int port;
+	cin >> port;
+
 	SOCKADDR_IN serverAddr;
 	serverAddr.sin_family = AF_INET;
-	serverAddr.sin_port = htons(23);
+	serverAddr.sin_port = htons(port);
 	serverAddr.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
 	
 	//bind
@@ -64,7 +68,9 @@ int _tmain(int argc, _TCHAR* argv[])
 			return 0;
 		}
 
-		HANDLE hThread1 = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)socketThread, (LPVOID)serverSocketC, 0, 0);
+		LPP lp = { serverSocketC , clientAddr };
+
+		HANDLE hThread1 = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)socketThread, (LPVOID)&lp, 0, 0);
 
 		cout << "Client Accepted: " << inet_ntoa(clientAddr.sin_addr) << " " << ntohs(clientAddr.sin_port) << endl;
 
@@ -77,10 +83,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
-DWORD WINAPI socketThread(SOCKET socket)
+DWORD WINAPI socketThread(LPP *lp)
 {
+	SOCKET socket = lp->socket;
+	SOCKADDR_IN addr = lp->addr;
 	cout << "Thread Created." << endl;
-	Server server = Server(socket);
+	Server server = Server(socket, addr);
+
 	int ret = server.handle();
 	if (ret < 0) {
 		cout << "Client Closed!" << endl;

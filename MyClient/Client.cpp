@@ -1,6 +1,7 @@
 #include "Client.h"
+#include <time.h>
 
-Client::Client(char server[])
+Client::Client(char server[], int port)
 {
 	WORD myVersionRequest;
 	WSADATA wsaData;
@@ -21,7 +22,7 @@ Client::Client(char server[])
 	SOCKADDR_IN addr;
 	addr.sin_addr.S_un.S_addr = inet_addr(server);
 	addr.sin_family = AF_INET;
-	addr.sin_port = htons(23);
+	addr.sin_port = htons(port);
 
 	ret = connect(clientSocket, (sockaddr *)&addr, sizeof(addr));
 	if (ret == SOCKET_ERROR) {
@@ -31,6 +32,25 @@ Client::Client(char server[])
 		return;
 	}
 
+	string xx = string("Connect to server: ");
+	xx.append(server);
+	logMessage((char *)xx.c_str());
+
+}
+
+int Client::logMessage(char *message)
+{
+	FILE *logFile = fopen("ClientLog.txt", "a");
+	char *wday[] = { "Sun","Mon","Tue","Wed","Thu","Fri","Sat" };
+	time_t timep;
+	struct tm *p;
+	time(&timep);
+	p = localtime(&timep);
+	fprintf(logFile, "%d/%d/%d ", (1900 + p->tm_year), (1 + p->tm_mon), p->tm_mday);
+	fprintf(logFile, "%s %d:%d:%d\t", wday[p->tm_wday], p->tm_hour, p->tm_min, p->tm_sec);
+	fprintf(logFile, "%s\n", message);
+	fclose(logFile);
+	return 1;
 }
 
 int Client::handle()
@@ -40,6 +60,15 @@ int Client::handle()
 	int displayIndex = 0;
 	memset(display, 0, sizeof(display));
 	int ret = recvMessage((char *)rec, MAX_BUFFER_SIZE);
+	string xx = string("Received: ");
+	char x[10];
+	for (int i = 0; i < ret; i++)
+	{
+		itoa((unsigned char)rec[i], x, 10);
+		xx.append(x);
+		xx.append(" ");
+	}
+	logMessage((char *)xx.c_str());
 #ifdef _DEBUG_MODE
 	printf("---------\nRECEIVE:\n");
 	for (int i = 0; i < ret; i++) {
@@ -152,7 +181,16 @@ int Client::handle()
 		}
 
 		if (sendIndex != 0) {
-			sendMessage(sendBuffer, sendIndex);
+			int ret = sendMessage(sendBuffer, sendIndex);
+			string xx = string("Sent: ");
+			char x[10];
+			for (int i = 0; i < ret; i++)
+			{
+				itoa((unsigned char)sendBuffer[i], x, 10);
+				xx.append(x);
+				xx.append(" ");
+			}
+			logMessage((char *)xx.c_str());
 		}
 		
 		return sendIndex == 0 ? 0 : 1;
@@ -183,7 +221,7 @@ int Client::recvMessage(char *message, int length)
 		ret = recv(clientSocket, ptr, length, 0);
 		if (ret == SOCKET_ERROR) {
 			cout << "Recv() failed!" << endl;
-			return SOCKET_ERROR;
+			return 0;
 		}
 		else if (ret == 0) {
 			cout << "Connection Closed!" << endl;
@@ -235,4 +273,19 @@ Client::~Client()
 {
 	closesocket(clientSocket);
 	WSACleanup();
+}
+
+int logMessage(char *message)
+{
+	FILE *logFile = fopen("ServerLog.txt", "a");
+	char *wday[] = { "Sun","Mon","Tue","Wed","Thu","Fri","Sat" };
+	time_t timep;
+	struct tm *p;
+	time(&timep);
+	p = localtime(&timep);
+	fprintf(logFile, "%d/%d/%d ", (1900 + p->tm_year), (1 + p->tm_mon), p->tm_mday);
+	fprintf(logFile, "%s %d:%d:%d\t", wday[p->tm_wday], p->tm_hour, p->tm_min, p->tm_sec);
+	fprintf(logFile, "%s\n", message);
+	fclose(logFile);
+	return 1;
 }

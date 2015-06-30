@@ -1,52 +1,64 @@
-﻿生成启动时间为 15/6/23 下午3:30:31。
+﻿生成启动时间为 15/6/30 下午2:23:41。
      1>项目“\\psf\Home\GIT\MyTELNET\MyClient\MyClient.vcxproj”在节点 2 上(Rebuild 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Client.cpp MyClient.cpp stdafx.cpp
          stdafx.cpp
          MyClient.cpp
-     1>\\psf\home\git\mytelnet\myclient\myclient.cpp(18): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>\\psf\home\git\mytelnet\myclient\myclient.cpp(25): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
          c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdio.h(1270): note: 参见“scanf”的声明
          Client.cpp
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(58): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(58): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(59): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(59): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(63): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(63): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(64): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(64): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(70): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(70): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(71): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(71): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(75): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(75): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(76): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(76): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(82): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(82): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(83): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(83): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(43): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(48): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\time.h(505): note: 参见“localtime”的声明
      1>\\psf\home\git\mytelnet\myclient\client.cpp(87): warning C4305: “=”: 从“Command”到“char”截断
      1>\\psf\home\git\mytelnet\myclient\client.cpp(87): warning C4309: “=”: 截断常量值
      1>\\psf\home\git\mytelnet\myclient\client.cpp(88): warning C4305: “=”: 从“Command”到“char”截断
      1>\\psf\home\git\mytelnet\myclient\client.cpp(88): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(94): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(94): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(95): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(95): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(92): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(92): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(93): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(93): warning C4309: “=”: 截断常量值
      1>\\psf\home\git\mytelnet\myclient\client.cpp(99): warning C4305: “=”: 从“Command”到“char”截断
      1>\\psf\home\git\mytelnet\myclient\client.cpp(99): warning C4309: “=”: 截断常量值
      1>\\psf\home\git\mytelnet\myclient\client.cpp(100): warning C4305: “=”: 从“Command”到“char”截断
      1>\\psf\home\git\mytelnet\myclient\client.cpp(100): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(104): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(104): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(105): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(105): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(111): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(111): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(112): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(112): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(116): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(116): warning C4309: “=”: 截断常量值
      1>\\psf\home\git\mytelnet\myclient\client.cpp(117): warning C4305: “=”: 从“Command”到“char”截断
      1>\\psf\home\git\mytelnet\myclient\client.cpp(117): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(118): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(118): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(121): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(121): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(122): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myclient\client.cpp(122): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(123): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(123): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(124): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(124): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(128): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(128): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(129): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(129): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(146): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(146): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(147): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(147): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(150): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(150): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(151): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(151): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(67): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdlib.h(1318): note: 参见“itoa”的声明
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(189): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdlib.h(1318): note: 参见“itoa”的声明
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(280): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+     1>\\psf\home\git\mytelnet\myclient\client.cpp(285): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\time.h(505): note: 参见“localtime”的声明
          正在生成代码...
        ResourceCompile:
          C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\MyClient.res" MyClient.rc 
@@ -60,4 +72,4 @@
 
 生成成功。
 
-已用时间 00:00:04.17
+已用时间 00:00:03.39

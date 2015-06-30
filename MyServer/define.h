@@ -48,4 +48,10 @@ enum Option
 
 //#define _DEBUG_MODE
 
+typedef struct _LP
+{
+	SOCKET socket;
+	SOCKADDR_IN addr;
+}LPP;
+
 #endif // !_DEFINE_H

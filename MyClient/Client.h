@@ -10,11 +10,12 @@ private:
 	SOCKET clientSocket;
 	char sendBuffer[MAX_BUFFER_SIZE];
 	int sendIndex;
+	int logMessage(char *message);
 public:
 	int sendMessage(char *message, int length);
 	int recvMessage(char *message, int length);
 
-	Client(char server[]);
+	Client(char server[], int port);
 	int handle();
 
 

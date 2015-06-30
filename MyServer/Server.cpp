@@ -1,8 +1,10 @@
 #include "Server.h"
+#include <time.h>
 
-Server::Server(SOCKET socket)
+Server::Server(SOCKET socket, SOCKADDR_IN addr)
 {
 	serverSocket = socket;
+	this->addr = addr;
 	supress = false;
 	echo = false;
 	memset(sendBuffer, 0, sizeof(sendBuffer));
@@ -15,11 +17,33 @@ Server::Server(SOCKET socket)
 	sendMessage(sendBuffer, sendIndex++);
 	supress = true;
 	echo = true;
+
+	string xx = string(inet_ntoa(addr.sin_addr));
+	xx.append("\t connected");
+	logMessage((char *)xx.c_str());
+
 }
 
+int Server::logMessage(char *message)
+{
+	FILE *logFile = fopen("ServerLog.txt", "a");
+	char *wday[] = { "Sun","Mon","Tue","Wed","Thu","Fri","Sat" };
+	time_t timep;
+	struct tm *p;
+	time(&timep);
+	p = localtime(&timep);
+	fprintf(logFile, "%d/%d/%d ", (1900 + p->tm_year), (1 + p->tm_mon), p->tm_mday);
+	fprintf(logFile, "%s %d:%d:%d\t", wday[p->tm_wday], p->tm_hour, p->tm_min, p->tm_sec);
+	fprintf(logFile, "%s\n", message);
+	fclose(logFile);
+	return 1;
+}
 
 Server::~Server()
 {
+	string xx = string(inet_ntoa(addr.sin_addr));
+	xx.append("\t disconnected");
+	logMessage((char *)xx.c_str());
 	closesocket(serverSocket);
 }
 
@@ -30,6 +54,17 @@ int Server::sendMessage(char *message, int length)
 		cout << "Send() failed! Code:" << WSAGetLastError() << endl;
 	}
 	else {
+		string xx = string(inet_ntoa(addr.sin_addr));
+		xx.append("\t sent: ");
+		char x[10];
+		for (int i = 0; i < ret; i++)
+		{
+			itoa((unsigned char)sendBuffer[i], x, 10);
+			xx.append(x);
+			xx.append(" ");
+		}
+		logMessage((char *)xx.c_str());
+
 #ifdef _DEBUG_MODE
 		cout << "Send Success!" << endl;
 #endif
@@ -50,9 +85,21 @@ int Server::recvMessage(char *message, int length)
 		}
 		else if (ret == 0) {
 			cout << "Connection Closed!" << endl;
+
 			return 0;
 		}
 		else if (ret != length) {
+			string xx = string(inet_ntoa(addr.sin_addr));
+			xx.append("\t received: ");
+			char x[10];
+			for (int i = 0; i < ret; i++)
+			{
+				itoa((unsigned char)ptr[i], x, 10);
+				xx.append(x);
+				xx.append(" ");
+			}
+			logMessage((char *)xx.c_str());
+
 			return ret;
 		}
 		else {
@@ -61,6 +108,16 @@ int Server::recvMessage(char *message, int length)
 			// to do
 			cout << "Out Of length in recv()" << endl;
 		}
+		string xx = string(inet_ntoa(addr.sin_addr));
+		xx.append("\t received: ");
+		char x[10];
+		for (int i = 0; i < ret; i++)
+		{
+			itoa((unsigned char)ptr[i], x, 10);
+			xx.append(x);
+			xx.append(" ");
+		}
+		logMessage((char *)xx.c_str());
 	}
 	return 1;
 }

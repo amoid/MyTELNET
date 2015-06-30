@@ -1,44 +1,54 @@
-﻿生成启动时间为 15/6/23 下午3:30:38。
+﻿生成启动时间为 15/6/30 下午2:23:50。
      1>项目“\\psf\Home\GIT\MyTELNET\MyServer\MyServer.vcxproj”在节点 2 上(Rebuild 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MyServer.cpp Server.cpp stdafx.cpp
          stdafx.cpp
          Server.cpp
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(9): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(9): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(10): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(10): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(11): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(11): warning C4309: “=”: 截断常量值
      1>\\psf\home\git\mytelnet\myserver\server.cpp(12): warning C4305: “=”: 从“Command”到“char”截断
      1>\\psf\home\git\mytelnet\myserver\server.cpp(12): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(13): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(13): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(95): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(95): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(104): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(104): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(108): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(108): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(111): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(111): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(114): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(114): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(117): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(117): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(135): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(135): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(136): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(136): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(139): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(139): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(140): warning C4305: “=”: 从“Command”到“char”截断
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(140): warning C4309: “=”: 截断常量值
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(173): warning C4267: “+=”: 从“size_t”转换到“char”，可能丢失数据
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(172): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(14): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(14): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(15): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(15): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(29): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(34): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\time.h(505): note: 参见“localtime”的声明
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(62): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdlib.h(1318): note: 参见“itoa”的声明
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(97): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdlib.h(1318): note: 参见“itoa”的声明
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(116): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+         c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\stdlib.h(1318): note: 参见“itoa”的声明
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(152): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(152): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(161): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(161): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(165): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(165): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(168): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(168): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(171): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(171): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(174): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(174): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(192): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(192): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(193): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(193): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(196): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(196): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(197): warning C4305: “=”: 从“Command”到“char”截断
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(197): warning C4309: “=”: 截断常量值
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(230): warning C4267: “+=”: 从“size_t”转换到“char”，可能丢失数据
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(229): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
          c:\program files (x86)\windows kits\10\include\10.0.10056.0\ucrt\string.h(119): note: 参见“strcpy”的声明
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(107): warning C4102: “WILL”: 未引用的标签
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(110): warning C4102: “WONT”: 未引用的标签
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(113): warning C4102: “DO”: 未引用的标签
-     1>\\psf\home\git\mytelnet\myserver\server.cpp(116): warning C4102: “DONT”: 未引用的标签
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(164): warning C4102: “WILL”: 未引用的标签
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(167): warning C4102: “WONT”: 未引用的标签
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(170): warning C4102: “DO”: 未引用的标签
+     1>\\psf\home\git\mytelnet\myserver\server.cpp(173): warning C4102: “DONT”: 未引用的标签
          MyServer.cpp
          正在生成代码...
        Link:
@@ -50,4 +60,4 @@
 
 生成成功。
 
-已用时间 00:00:03.33
+已用时间 00:00:03.16

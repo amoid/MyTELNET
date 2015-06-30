@@ -6,7 +6,14 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Client client = Client("127.0.0.1");
+	cout << "Please input the server IP: ";
+	char serIp[100];
+	cin >> serIp;
+	
+	cout << "Please input the server port: ";
+	int port;
+	cin >> port;
+	Client client = Client(serIp, port);
 	char x[1024];
 	int length;
 	length = 1024;
